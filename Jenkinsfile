@@ -16,6 +16,7 @@ pipeline {
             steps {
                 sh '''
                     echo "Deploying..."
+                    nohup java -jar target/jenkins-demo-0.0.1-SNAPSHOT.jar &
                     echo "Deployed"
                 '''
             }
