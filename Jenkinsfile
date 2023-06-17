@@ -19,7 +19,7 @@ pipeline {
                     cp target/jenkins-demo-0.0.1-SNAPSHOT.jar /home/ren/tools/jenkins/deploy
                     cd /home/ren/tools/jenkins/deploy
                     export BUILD_ID=dontKillMe
-                    nohup java -jar target/jenkins-demo-0.0.1-SNAPSHOT.jar &
+                    nohup java -jar jenkins-demo-0.0.1-SNAPSHOT.jar &
                     echo "Deployed"
                 '''
             }
