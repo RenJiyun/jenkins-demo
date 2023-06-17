@@ -16,6 +16,8 @@ pipeline {
             steps {
                 sh '''
                     echo "Deploying..."
+                    cp target/jenkins-demo-0.0.1-SNAPSHOT.jar /home/ren/tools/jenkins/deploy
+                    cd /home/ren/tools/jenkins/deploy
                     nohup java -jar target/jenkins-demo-0.0.1-SNAPSHOT.jar &
                     echo "Deployed"
                 '''
