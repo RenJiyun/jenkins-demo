@@ -15,12 +15,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                    echo "Deploying..."
                     cp target/jenkins-demo-0.0.1-SNAPSHOT.jar /home/ren/tools/jenkins/deploy
+                    cp bin/start.sh /home/ren/tools/jenkins/deploy
                     cd /home/ren/tools/jenkins/deploy
-                    JENKINS_NODE_COOKIE=dontKillMe
-                    nohup java -jar jenkins-demo-0.0.1-SNAPSHOT.jar > nohup.out 2>&1 &
-                    sleep 5
+                    start.sh
                     echo "Deployed"
                 '''
             }
